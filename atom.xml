@@ -3,11 +3,11 @@
   <title>云飞阁</title>
   
   <subtitle>Winfy&#39;s Blog</subtitle>
-  <link href="https://winfy8.gitee.io/blog/atom.xml" rel="self"/>
+  <link href="https://winfy8.gitee.io/atom.xml" rel="self"/>
   
-  <link href="https://winfy8.gitee.io/blog/"/>
+  <link href="https://winfy8.gitee.io/"/>
   <updated>2022-05-29T01:52:35.244Z</updated>
-  <id>https://winfy8.gitee.io/blog/</id>
+  <id>https://winfy8.gitee.io/</id>
   
   <author>
     <name>Winfy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>个人博客上线了</title>
-    <link href="https://winfy8.gitee.io/blog/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/"/>
-    <id>https://winfy8.gitee.io/blog/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/</id>
+    <link href="https://winfy8.gitee.io/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/"/>
+    <id>https://winfy8.gitee.io/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/</id>
     <published>2022-05-26T04:15:00.000Z</published>
     <updated>2022-05-29T01:52:35.244Z</updated>
     
@@ -34,17 +34,17 @@
     
     
     
-    <category term="生活随笔" scheme="https://winfy8.gitee.io/blog/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+    <category term="生活随笔" scheme="https://winfy8.gitee.io/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
     
     
-    <category term="随笔" scheme="https://winfy8.gitee.io/blog/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="https://winfy8.gitee.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>CSS：置换和非置换元素</title>
-    <link href="https://winfy8.gitee.io/blog/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/"/>
-    <id>https://winfy8.gitee.io/blog/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/</id>
+    <link href="https://winfy8.gitee.io/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/"/>
+    <id>https://winfy8.gitee.io/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/</id>
     <published>2015-03-15T05:16:00.000Z</published>
     <updated>2022-05-27T10:09:26.669Z</updated>
     
@@ -70,21 +70,21 @@
     
     
     
-    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    <category term="CSS" scheme="https://winfy8.gitee.io/categories/CSS/"/>
     
     
-    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    <category term="w3c" scheme="https://winfy8.gitee.io/tags/w3c/"/>
     
-    <category term="视觉格式化模型" scheme="https://winfy8.gitee.io/blog/tags/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/"/>
+    <category term="视觉格式化模型" scheme="https://winfy8.gitee.io/tags/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/"/>
     
-    <category term="置换元素" scheme="https://winfy8.gitee.io/blog/tags/%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0/"/>
+    <category term="置换元素" scheme="https://winfy8.gitee.io/tags/%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0/"/>
     
   </entry>
   
   <entry>
     <title>margin系列之外边距折叠</title>
-    <link href="https://winfy8.gitee.io/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/"/>
-    <id>https://winfy8.gitee.io/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/</id>
+    <link href="https://winfy8.gitee.io/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/"/>
+    <id>https://winfy8.gitee.io/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/</id>
     <published>2013-12-04T03:15:00.000Z</published>
     <updated>2022-05-27T03:42:59.153Z</updated>
     
@@ -100,21 +100,21 @@
     
     
     
-    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    <category term="CSS" scheme="https://winfy8.gitee.io/categories/CSS/"/>
     
     
-    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    <category term="margin" scheme="https://winfy8.gitee.io/tags/margin/"/>
     
-    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    <category term="w3c" scheme="https://winfy8.gitee.io/tags/w3c/"/>
     
-    <category term="margin折叠" scheme="https://winfy8.gitee.io/blog/tags/margin%E6%8A%98%E5%8F%A0/"/>
+    <category term="margin折叠" scheme="https://winfy8.gitee.io/tags/margin%E6%8A%98%E5%8F%A0/"/>
     
   </entry>
   
   <entry>
     <title>margin系列之与相对偏移的异同</title>
-    <link href="https://winfy8.gitee.io/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/"/>
-    <id>https://winfy8.gitee.io/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/</id>
+    <link href="https://winfy8.gitee.io/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/"/>
+    <id>https://winfy8.gitee.io/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/</id>
     <published>2013-12-02T03:15:00.000Z</published>
     <updated>2022-05-27T03:42:59.153Z</updated>
     
@@ -132,21 +132,21 @@
     
     
     
-    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    <category term="CSS" scheme="https://winfy8.gitee.io/categories/CSS/"/>
     
     
-    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    <category term="margin" scheme="https://winfy8.gitee.io/tags/margin/"/>
     
-    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    <category term="w3c" scheme="https://winfy8.gitee.io/tags/w3c/"/>
     
-    <category term="margin偏移" scheme="https://winfy8.gitee.io/blog/tags/margin%E5%81%8F%E7%A7%BB/"/>
+    <category term="margin偏移" scheme="https://winfy8.gitee.io/tags/margin%E5%81%8F%E7%A7%BB/"/>
     
   </entry>
   
   <entry>
     <title>margin系列之百分比</title>
-    <link href="https://winfy8.gitee.io/blog/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/"/>
-    <id>https://winfy8.gitee.io/blog/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/</id>
+    <link href="https://winfy8.gitee.io/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/"/>
+    <id>https://winfy8.gitee.io/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/</id>
     <published>2013-11-30T03:15:00.000Z</published>
     <updated>2022-05-27T03:42:59.154Z</updated>
     
@@ -159,21 +159,21 @@
     
     
     
-    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    <category term="CSS" scheme="https://winfy8.gitee.io/categories/CSS/"/>
     
     
-    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    <category term="margin" scheme="https://winfy8.gitee.io/tags/margin/"/>
     
-    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    <category term="w3c" scheme="https://winfy8.gitee.io/tags/w3c/"/>
     
-    <category term="margin百分比" scheme="https://winfy8.gitee.io/blog/tags/margin%E7%99%BE%E5%88%86%E6%AF%94/"/>
+    <category term="margin百分比" scheme="https://winfy8.gitee.io/tags/margin%E7%99%BE%E5%88%86%E6%AF%94/"/>
     
   </entry>
   
   <entry>
     <title>margin系列之keyword auto</title>
-    <link href="https://winfy8.gitee.io/blog/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/"/>
-    <id>https://winfy8.gitee.io/blog/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/</id>
+    <link href="https://winfy8.gitee.io/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/"/>
+    <id>https://winfy8.gitee.io/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/</id>
     <published>2013-11-29T03:15:00.000Z</published>
     <updated>2022-05-27T03:43:48.043Z</updated>
     
@@ -200,12 +200,12 @@
     
     
     
-    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    <category term="CSS" scheme="https://winfy8.gitee.io/categories/CSS/"/>
     
     
-    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    <category term="margin" scheme="https://winfy8.gitee.io/tags/margin/"/>
     
-    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    <category term="w3c" scheme="https://winfy8.gitee.io/tags/w3c/"/>
     
   </entry>
   
