@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>WinFly</title>
+  <title>云飞阁</title>
   
-  <subtitle>云飞之博</subtitle>
-  <link href="https://winfy8.github.io/atom.xml" rel="self"/>
+  <subtitle>Winfy&#39;s Blog</subtitle>
+  <link href="https://winfy8.gitee.io/blog/atom.xml" rel="self"/>
   
-  <link href="https://winfy8.github.io/"/>
-  <updated>2022-05-19T14:27:48.401Z</updated>
-  <id>https://winfy8.github.io/</id>
+  <link href="https://winfy8.gitee.io/blog/"/>
+  <updated>2022-05-29T01:52:35.244Z</updated>
+  <id>https://winfy8.gitee.io/blog/</id>
   
   <author>
     <name>Winfy</name>
@@ -17,23 +17,195 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://winfy8.github.io/2022/05/19/hello-world/"/>
-    <id>https://winfy8.github.io/2022/05/19/hello-world/</id>
-    <published>2022-05-19T14:27:48.401Z</published>
-    <updated>2022-05-19T14:27:48.401Z</updated>
+    <title>个人博客上线了</title>
+    <link href="https://winfy8.gitee.io/blog/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/"/>
+    <id>https://winfy8.gitee.io/blog/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/</id>
+    <published>2022-05-26T04:15:00.000Z</published>
+    <updated>2022-05-29T01:52:35.244Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h3 id=&quot;博客主体完成&quot;&gt;&lt;a href=&quot;#博客主体完成&quot; class=&quot;headerlink&quot; title=&quot;博客主体完成&quot;&gt;&lt;/a&gt;博客主体完成&lt;/h3&gt;&lt;p&gt;经过一个多星期的折腾，个人博客终于建成基本框架，成功上线了！  </summary>
         
       
     
     
     
+    <category term="生活随笔" scheme="https://winfy8.gitee.io/blog/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="随笔" scheme="https://winfy8.gitee.io/blog/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS：置换和非置换元素</title>
+    <link href="https://winfy8.gitee.io/blog/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/"/>
+    <id>https://winfy8.gitee.io/blog/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/</id>
+    <published>2015-03-15T05:16:00.000Z</published>
+    <updated>2022-05-27T10:09:26.669Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自CSS大佬杜瑶的&lt;a href=&quot;http://blog.doyoe.com/&quot;&gt;CSS探索之旅&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;先进一个题外话&quot;&gt;&lt;a href=&quot;#先进一个题外话&quot; class=&quot;headerlink&quot; title=&quot;先进一个题外话&quot;&gt;&lt;/a&gt;先进一个题外话&lt;/h2&gt;&lt;p&gt;在面试一个 &lt;code&gt;重构&lt;/code&gt;（各大公司的叫法可能不太一样）时，我喜欢从一个点开始问，然后一直延展下去成为一条线，甚至是一个面，直到问到不会的地方，然后又换另外一个点。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例如：我可能会说，能简单聊聊 &lt;code&gt;行内级元素&lt;/code&gt; 和 &lt;code&gt;块级元素&lt;/code&gt; 的区别吗。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一般这时，候选人都会说到 &lt;code&gt;行内级元素&lt;/code&gt; 不会换新行，而 &lt;code&gt;块级元素&lt;/code&gt; 会格式化为块状，即换行。但也有些遗憾的方面（如：&lt;a href=&quot;/2015/03/09/css/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E6%A1%86/#block-level-element&quot;&gt;混淆了块元素和块级元素，行内元素和行内级元素&lt;/a&gt;），当然这看起来似乎不是特别重要。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这时我会继续问，&lt;code&gt;行内元素&lt;/code&gt; 能够定义宽度和高度吗？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;不少候选人会说：&lt;strong&gt;不能&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我会继续问，说几个你熟悉的 &lt;code&gt;行内元素&lt;/code&gt; 吧&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;于是 &lt;code&gt;span&lt;/code&gt;, &lt;code&gt;strong&lt;/code&gt;, &lt;code&gt;em&lt;/code&gt;, &lt;code&gt;ins&lt;/code&gt;… 答案我还是比较满意的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我仍然会继续，&lt;code&gt;img&lt;/code&gt; 是行内元素么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;候选人这时通常会迟疑一下，可能意识到我接下来想问啥了，但还是会回答：&lt;strong&gt;是&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    
+    
+    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    
+    <category term="视觉格式化模型" scheme="https://winfy8.gitee.io/blog/tags/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="置换元素" scheme="https://winfy8.gitee.io/blog/tags/%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>margin系列之外边距折叠</title>
+    <link href="https://winfy8.gitee.io/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/"/>
+    <id>https://winfy8.gitee.io/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/</id>
+    <published>2013-12-04T03:15:00.000Z</published>
+    <updated>2022-05-27T03:42:59.153Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自CSS大佬杜瑶的&lt;a href=&quot;http://blog.doyoe.com/&quot;&gt;CSS探索之旅&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;不怀疑你也在工作中遇见过&quot;&gt;&lt;a href=&quot;#不怀疑你也在工作中遇见过&quot; class=&quot;headerlink&quot; title=&quot;不怀疑你也在工作中遇见过&quot;&gt;&lt;/a&gt;不怀疑你也在工作中遇见过&lt;/h2&gt;&lt;p&gt;几乎可以不用怀疑，前端工作中的你一定遇见过 &lt;code&gt;margin&lt;/code&gt; 折叠。&lt;/p&gt;
+&lt;p&gt;不确定？别着急，你可能写过这样的代码：&lt;/p&gt;
+&lt;h3 id=&quot;CSS&quot;&gt;&lt;a href=&quot;#CSS&quot; class=&quot;headerlink&quot; title=&quot;CSS:&quot;&gt;&lt;/a&gt;CSS:&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs css&quot;&gt;&lt;span class=&quot;hljs-selector-tag&quot;&gt;p&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&quot;hljs-attribute&quot;&gt;margin&lt;/span&gt;: &lt;span class=&quot;hljs-number&quot;&gt;50px&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML:&quot;&gt;&lt;/a&gt;HTML:&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs html&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;demo&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;我是一个华丽的段落，别看我文字少&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;我是另一个华丽的段落&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;大家觉得这 &lt;code&gt;2p&lt;/code&gt; 之间会发生点什么？是会合体呢？还是分开？来看看 &lt;code&gt;DEMO1&lt;/code&gt; &lt;a href=&quot;http://demo.doyoe.com/css/margin/collapse-margin.htm&quot;&gt;margin折叠&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    
+    
+    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    
+    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    
+    <category term="margin折叠" scheme="https://winfy8.gitee.io/blog/tags/margin%E6%8A%98%E5%8F%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>margin系列之与相对偏移的异同</title>
+    <link href="https://winfy8.gitee.io/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/"/>
+    <id>https://winfy8.gitee.io/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/</id>
+    <published>2013-12-02T03:15:00.000Z</published>
+    <updated>2022-05-27T03:42:59.153Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自CSS大佬杜瑶的&lt;a href=&quot;http://blog.doyoe.com/&quot;&gt;CSS探索之旅&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;也许我们是一样的&quot;&gt;&lt;a href=&quot;#也许我们是一样的&quot; class=&quot;headerlink&quot; title=&quot;也许我们是一样的&quot;&gt;&lt;/a&gt;也许我们是一样的&lt;/h2&gt;&lt;p&gt;可能大家都用会 &lt;code&gt;margin&lt;/code&gt; 或者相对偏移的 &lt;code&gt;top, right, bottom, left&lt;/code&gt; 来做一些类似元素偏移的事，其实我也会。这回我们只聊 &lt;code&gt;relative&lt;/code&gt; 下的 &lt;code&gt;top, right, bottom, left&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;比如说我们想让一个 div 向下偏移 50 个像素，通常会这样：&lt;/p&gt;
+&lt;h3 id=&quot;Case-1&quot;&gt;&lt;a href=&quot;#Case-1&quot; class=&quot;headerlink&quot; title=&quot;Case 1:&quot;&gt;&lt;/a&gt;Case 1:&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs css&quot;&gt;&lt;span class=&quot;hljs-selector-id&quot;&gt;#demo&lt;/span&gt; &lt;span class=&quot;hljs-selector-class&quot;&gt;.margin-top&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&quot;hljs-attribute&quot;&gt;margin-top&lt;/span&gt;: &lt;span class=&quot;hljs-number&quot;&gt;50px&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;Case-2&quot;&gt;&lt;a href=&quot;#Case-2&quot; class=&quot;headerlink&quot; title=&quot;Case 2:&quot;&gt;&lt;/a&gt;Case 2:&lt;/h3&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs css&quot;&gt;&lt;span class=&quot;hljs-selector-id&quot;&gt;#demo&lt;/span&gt; &lt;span class=&quot;hljs-selector-class&quot;&gt;.relative-top&lt;/span&gt;&amp;#123;&lt;br&gt;	&lt;span class=&quot;hljs-attribute&quot;&gt;position&lt;/span&gt;:relative;&lt;br&gt;	&lt;span class=&quot;hljs-attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;hljs-number&quot;&gt;50px&lt;/span&gt;;&lt;br&gt;&amp;#125;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;HTML&quot;&gt;&lt;a href=&quot;#HTML&quot; class=&quot;headerlink&quot; title=&quot;HTML:&quot;&gt;&lt;/a&gt;HTML:&lt;/h3&gt;&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;code class=&quot;hljs HTML&quot;&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;demo&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;margin-top&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;我是margin-top:50px&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;	&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;hljs-attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;hljs-string&quot;&gt;&amp;quot;relative-top&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;我是relative top:50px&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;hljs-tag&quot;&gt;&amp;lt;/&lt;span class=&quot;hljs-name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;上述2种方式，我们都可以完成 div 向下偏移 50 个像素的需求。来看看 &lt;code&gt;DEMO1&lt;/code&gt;: &lt;a href=&quot;http://demo.doyoe.com/css/margin/margin-top-vs-relative-top.htm&quot;&gt;margin-top vs. relative top&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    
+    
+    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    
+    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    
+    <category term="margin偏移" scheme="https://winfy8.gitee.io/blog/tags/margin%E5%81%8F%E7%A7%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>margin系列之百分比</title>
+    <link href="https://winfy8.gitee.io/blog/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/"/>
+    <id>https://winfy8.gitee.io/blog/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/</id>
+    <published>2013-11-30T03:15:00.000Z</published>
+    <updated>2022-05-27T03:42:59.154Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自CSS大佬杜瑶的&lt;a href=&quot;http://blog.doyoe.com/&quot;&gt;CSS探索之旅&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;你可能从没注意过它&quot;&gt;&lt;a href=&quot;#你可能从没注意过它&quot; class=&quot;headerlink&quot; title=&quot;你可能从没注意过它&quot;&gt;&lt;/a&gt;你可能从没注意过它&lt;/h2&gt;&lt;p&gt;在 [margin系列之keyword auto](&lt;a href=&quot;http://blog.doyoe.com/2013/11/29/css/margin%E7%B3%BB%E5%88%97%E4%B9%8Bkeyword&quot;&gt;http://blog.doyoe.com/2013/11/29/css/margin系列之keyword&lt;/a&gt; auto&amp;#x2F;) 中，说过了 &lt;code&gt;margin&lt;/code&gt; 值为 &lt;code&gt;auto&lt;/code&gt; 的情况，这次要聊的是值为百分比的情形。&lt;/p&gt;
+&lt;p&gt;我必须承认这是一个非常基础的知识点，但有一段时间我发现很多人对此有错误的认知。偶尔在面试或者分享的时候，我会问到这个问题，有人会脱口而出的告诉我他对此的感性理解。&lt;/p&gt;
+&lt;p&gt;或许现在大多数人对此不屑一顾，但我仍想说一说，这样以后就可以不再问类似的问题了。&lt;/p&gt;
+&lt;h2 id=&quot;假设有这样一个场景&quot;&gt;&lt;a href=&quot;#假设有这样一个场景&quot; class=&quot;headerlink&quot; title=&quot;假设有这样一个场景&quot;&gt;&lt;/a&gt;假设有这样一个场景&lt;/h2&gt;&lt;p&gt;仍然以一个问题来开始，这是我之前在 &lt;a href=&quot;http://weibo.com/doyoe&quot;&gt;微博&lt;/a&gt; 发过的，原文是这样的：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    
+    
+    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    
+    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
+    
+    <category term="margin百分比" scheme="https://winfy8.gitee.io/blog/tags/margin%E7%99%BE%E5%88%86%E6%AF%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>margin系列之keyword auto</title>
+    <link href="https://winfy8.gitee.io/blog/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/"/>
+    <id>https://winfy8.gitee.io/blog/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/</id>
+    <published>2013-11-29T03:15:00.000Z</published>
+    <updated>2022-05-27T03:43:48.043Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文转载自CSS大佬杜瑶的&lt;a href=&quot;http://blog.doyoe.com/&quot;&gt;CSS探索之旅&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;margin的重要性：&quot;&gt;&lt;a href=&quot;#margin的重要性：&quot; class=&quot;headerlink&quot; title=&quot;margin的重要性：&quot;&gt;&lt;/a&gt;margin的重要性：&lt;/h2&gt;&lt;p&gt;有个不容置疑的事，前端开发人员没有人能够忽视CSS &lt;code&gt;margin&lt;/code&gt;的重要性。CSS coding时，margin的使用频率就如同呼吸般频繁，如果我可以说得夸张点的话。&lt;/p&gt;
+&lt;p&gt;margin作为CSS盒模型基本组成要素之一，是非常Basis的一个技术手段，所以我想对于它的一些基本情况应该不用太介绍了？&lt;/p&gt;
+&lt;h2 id=&quot;margin经常被用来做什么？&quot;&gt;&lt;a href=&quot;#margin经常被用来做什么？&quot; class=&quot;headerlink&quot; title=&quot;margin经常被用来做什么？&quot;&gt;&lt;/a&gt;margin经常被用来做什么？&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;让块元素水平居中；&lt;/li&gt;
+&lt;li&gt;让元素之间留有舒适的留白；&lt;/li&gt;
+&lt;li&gt;处理特殊的first或last，大家懂的？&lt;/li&gt;
+&lt;li&gt;一些布局；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;需要注意的地方：&quot;&gt;&lt;a href=&quot;#需要注意的地方：&quot; class=&quot;headerlink&quot; title=&quot;需要注意的地方：&quot;&gt;&lt;/a&gt;需要注意的地方：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;margin折叠；&lt;/li&gt;
+&lt;li&gt;margin的百分比值；&lt;/li&gt;
+&lt;li&gt;margin的auto值；&lt;/li&gt;
+&lt;li&gt;margin和相对偏移top, right, bottom, left的异同；&lt;/li&gt;
+&lt;li&gt;IE6浮动双margin Bug；&lt;/li&gt;
+&lt;li&gt;IE6浮动相邻元素3px Bug；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;看起来似乎有不少的知识点？恩，这些都是我们需要了解的，包括一些没有被列举出来的点。&lt;/p&gt;
+&lt;p&gt;今天要讲的其实只是其中很少的一部分，恩，标题里有：keyword auto&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CSS" scheme="https://winfy8.gitee.io/blog/categories/CSS/"/>
+    
+    
+    <category term="margin" scheme="https://winfy8.gitee.io/blog/tags/margin/"/>
+    
+    <category term="w3c" scheme="https://winfy8.gitee.io/blog/tags/w3c/"/>
     
   </entry>
   

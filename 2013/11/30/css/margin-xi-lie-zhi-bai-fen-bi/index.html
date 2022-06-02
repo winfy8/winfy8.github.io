@@ -1,0 +1,747 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/BlogIcon.png">
+  <link rel="icon" href="/blog/img/BlogIcon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="杜瑶">
+  <meta name="keywords" content="云飞,Winfy,生活,移动,前端,开发">
+  
+    <meta name="description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 你可能从没注意过它在 [margin系列之keyword auto](http:&#x2F;&#x2F;blog.doyoe.com&#x2F;2013&#x2F;11&#x2F;29&#x2F;css&#x2F;margin系列之keyword auto&#x2F;) 中，说过了 margin 值为 auto 的情况，这次要聊的是值为百分比的情形。 我必须承认这是一个非常基础的知识点，但有一段时间我发现很多人对此有错误的认">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之百分比">
+<meta property="og:url" content="https://winfy8.gitee.io/blog/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/index.html">
+<meta property="og:site_name" content="云飞阁">
+<meta property="og:description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 你可能从没注意过它在 [margin系列之keyword auto](http:&#x2F;&#x2F;blog.doyoe.com&#x2F;2013&#x2F;11&#x2F;29&#x2F;css&#x2F;margin系列之keyword auto&#x2F;) 中，说过了 margin 值为 auto 的情况，这次要聊的是值为百分比的情形。 我必须承认这是一个非常基础的知识点，但有一段时间我发现很多人对此有错误的认">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-11-30T03:15:00.000Z">
+<meta property="article:modified_time" content="2022-05-27T03:42:59.154Z">
+<meta property="article:author" content="Winfy">
+<meta property="article:tag" content="margin">
+<meta property="article:tag" content="w3c">
+<meta property="article:tag" content="margin百分比">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>margin系列之百分比 - 云飞阁</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/myfonts.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"winfy8.gitee.io","root":"/blog/","version":"1.9.0","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","app_key":"cnLIT5cgnYGF57t9f3ABOinu","server_url":"https://xg2kpiwv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/blog/atom.xml" title="云飞阁" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>云飞阁</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                按时归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                文章分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                全站标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友情链接
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        
+          <br />
+        
+        <div class="h2">
+          
+            <span id="subtitle">margin系列之百分比</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        杜瑶
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2013-11-30 11:15" pubdate>
+          2013年11月30日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">margin系列之百分比</h1>
+            
+            <div class="markdown-body">
+              
+              <p>本文转载自CSS大佬杜瑶的<a target="_blank" rel="noopener" href="http://blog.doyoe.com/">CSS探索之旅</a></p>
+<h2 id="你可能从没注意过它"><a href="#你可能从没注意过它" class="headerlink" title="你可能从没注意过它"></a>你可能从没注意过它</h2><p>在 [margin系列之keyword auto](<a target="_blank" rel="noopener" href="http://blog.doyoe.com/2013/11/29/css/margin%E7%B3%BB%E5%88%97%E4%B9%8Bkeyword">http://blog.doyoe.com/2013/11/29/css/margin系列之keyword</a> auto&#x2F;) 中，说过了 <code>margin</code> 值为 <code>auto</code> 的情况，这次要聊的是值为百分比的情形。</p>
+<p>我必须承认这是一个非常基础的知识点，但有一段时间我发现很多人对此有错误的认知。偶尔在面试或者分享的时候，我会问到这个问题，有人会脱口而出的告诉我他对此的感性理解。</p>
+<p>或许现在大多数人对此不屑一顾，但我仍想说一说，这样以后就可以不再问类似的问题了。</p>
+<h2 id="假设有这样一个场景"><a href="#假设有这样一个场景" class="headerlink" title="假设有这样一个场景"></a>假设有这样一个场景</h2><p>仍然以一个问题来开始，这是我之前在 <a target="_blank" rel="noopener" href="http://weibo.com/doyoe">微博</a> 发过的，原文是这样的：</p>
+<span id="more"></span>
+
+<p>假设一个块级包含容器，宽1000px，高600px，块级子元素定义 <code>margin:10% 5%;</code> 大家说说 <code>margin</code> 的 <code>top, right, bottom, left</code> 计算值最终是多少？</p>
+<p>我记得得到不少 <code>100px 30px 100px 30px</code> 的反馈，我们来还原代码：</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span>&#123;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">1000px</span>;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">600px</span>;<br>&#125;<br><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-tag">p</span>&#123;<br>	<span class="hljs-attribute">margin</span>: <span class="hljs-number">10%</span> <span class="hljs-number">5%</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML:"></a>HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>恩，注意看我所在的位置。<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>事实告诉我们结果是 <code>100px 50px 100px 50px</code>，不论结果是否符合你的预期，我们先来看demo验证一下：<a target="_blank" rel="noopener" href="//demo.doyoe.com/css/margin/percentage.htm">margin百分比结果猜想</a>，当然，你也根据上面还原的代码自己创建一个例子。</p>
+<h2 id="为什么会这样？"><a href="#为什么会这样？" class="headerlink" title="为什么会这样？"></a>为什么会这样？</h2><p>诧异吗？不用怀疑浏览器出了问题，因为这是正确的实现。</p>
+<p>规范中注明 <code>margin</code> 的百分比值参照其包含块的宽度进行计算。</p>
+<p>当然，它不会这么简单，和上篇文章 keyword auto 一样，这只发生在默认的 <code>writing-mode: horizontal-tb;</code> 和 <code>direction: ltr;</code> 的情况下。</p>
+<p>当书写模式变成纵向的时候，其参照将会变成包含块的高度。我们改变一下上面例子中的CSS书写模式：</p>
+<h3 id="CSS-1"><a href="#CSS-1" class="headerlink" title="CSS:"></a>CSS:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span>&#123;<br>	-webkit-<span class="hljs-attribute">writing-mode</span>: vertical-rl; <span class="hljs-comment">/* for browsers of webkit engine */</span><br>	<span class="hljs-attribute">writing-mode</span>: tb-rl; <span class="hljs-comment">/* for ie */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>在 #demo 中添加这2句，其它code不变。也有个例子供观：<a target="_blank" rel="noopener" href="//demo.doyoe.com/css/margin/percentage2.htm">书写模式影响margin百分比的参照对象</a>。</p>
+<p>恩，这回的结果是 <code>60px 30px 60px 30px</code> ，因为其参照对象变成了包含块的高度。</p>
+<h2 id="顺带再说说"><a href="#顺带再说说" class="headerlink" title="顺带再说说"></a>顺带再说说</h2><p>你是否觉得这不符合常规的感性认知？感性认知更多感觉应该横向参照包含块宽度，纵向参照包含块高度。</p>
+<p>其实这是为了要横向和纵向2个方向都创建相同的margin，如果它们的参照物不一致，那就无法得到两个方向相同的留白。</p>
+<p>你可能会问那为什么要选择宽度做参照而不是高度呢？</p>
+<p>这其实更多的要从CSS设计意图上去想，因为CSS的基础需求是排版，而通常我们所见的横排文字，其水平宽度一定（仔细回想一下，如果没有显式的定义宽度或者强制一行显示，都会遇到边界换行，而不是水平延展），垂直方向可以无限延展。但当书写模式为纵向时，其参照就变成了高度而不再是宽度了。</p>
+<p>还记得我们在 <a target="_blank" rel="noopener" href="http://blog.doyoe.com/~posts/css/2013-11-29-margin%E7%B3%BB%E5%88%97%E4%B9%8Bkeyword%20auto.md">margin系列之keyword auto</a> 留了个问题：为什么 <code>margin: auto;</code> 无法再纵向上垂直居中？其实原因也是上面所说的，因为纵向是可以无限延展的，所以没有一个一定的值可以被参照被用来计算。</p>
+<h2 id="受书写模式影响的其它特性："><a href="#受书写模式影响的其它特性：" class="headerlink" title="受书写模式影响的其它特性："></a>受书写模式影响的其它特性：</h2><ul>
+<li>margin折叠</li>
+<li>margin的keyword auto value</li>
+<li>padding的百分比值</li>
+</ul>
+<h2 id="可参考："><a href="#可参考：" class="headerlink" title="可参考："></a>可参考：</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://dev.w3.org/csswg/css-box/#the-margin-properties">http://dev.w3.org/csswg/css-box/#the-margin-properties</a></li>
+<li><a target="_blank" rel="noopener" href="http://dev.w3.org/csswg/css-box/#ltpercentagegt">http://dev.w3.org/csswg/css-box/#ltpercentagegt</a></li>
+<li><a target="_blank" rel="noopener" href="http://dev.w3.org/csswg/css-box/#Calculating">http://dev.w3.org/csswg/css-box/#Calculating</a></li>
+</ul>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/margin/">#margin</a>
+      
+        <a href="/blog/tags/w3c/">#w3c</a>
+      
+        <a href="/blog/tags/margin%E7%99%BE%E5%88%86%E6%AF%94/">#margin百分比</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/" title="margin系列之与相对偏移的异同">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">margin系列之与相对偏移的异同</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2013/11/29/css/margin-xi-lie-zhi-keyword-auto/" title="margin系列之keyword auto">
+                        <span class="hidden-mobile">margin系列之keyword auto</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://unpkg.com/valine/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","appKey":"cnLIT5cgnYGF57t9f3ABOinu","path":"window.location.pathname","placeholder":"请在这里输入您的评论...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://xg2kpiwv.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      Ⓒ 2022 <a href="http://iwfs.org.cn" target="_blank" rel="nofollow noopener"><span>Winfy</span></a>&nbsp;| Ⓟ<a href="https://hexo.io" target="_blank" rel="nofollow noopener"> Hexo</a> &amp; <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+  <script defer src="/blog/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

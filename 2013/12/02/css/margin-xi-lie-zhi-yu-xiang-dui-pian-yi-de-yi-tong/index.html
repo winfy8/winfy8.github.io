@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/BlogIcon.png">
+  <link rel="icon" href="/blog/img/BlogIcon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="杜瑶">
+  <meta name="keywords" content="云飞,Winfy,生活,移动,前端,开发">
+  
+    <meta name="description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 也许我们是一样的可能大家都用会 margin 或者相对偏移的 top, right, bottom, left 来做一些类似元素偏移的事，其实我也会。这回我们只聊 relative 下的 top, right, bottom, left 。 比如说我们想让一个 div 向下偏移 50 个像素，通常会这样： Case 1:123#demo .margin-t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之与相对偏移的异同">
+<meta property="og:url" content="https://winfy8.gitee.io/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/index.html">
+<meta property="og:site_name" content="云飞阁">
+<meta property="og:description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 也许我们是一样的可能大家都用会 margin 或者相对偏移的 top, right, bottom, left 来做一些类似元素偏移的事，其实我也会。这回我们只聊 relative 下的 top, right, bottom, left 。 比如说我们想让一个 div 向下偏移 50 个像素，通常会这样： Case 1:123#demo .margin-t">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-12-02T03:15:00.000Z">
+<meta property="article:modified_time" content="2022-05-27T03:42:59.153Z">
+<meta property="article:author" content="Winfy">
+<meta property="article:tag" content="margin">
+<meta property="article:tag" content="w3c">
+<meta property="article:tag" content="margin偏移">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>margin系列之与相对偏移的异同 - 云飞阁</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/myfonts.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"winfy8.gitee.io","root":"/blog/","version":"1.9.0","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","app_key":"cnLIT5cgnYGF57t9f3ABOinu","server_url":"https://xg2kpiwv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/blog/atom.xml" title="云飞阁" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>云飞阁</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                按时归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                文章分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                全站标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友情链接
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        
+          <br />
+        
+        <div class="h2">
+          
+            <span id="subtitle">margin系列之与相对偏移的异同</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        杜瑶
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2013-12-02 11:15" pubdate>
+          2013年12月2日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          26 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">margin系列之与相对偏移的异同</h1>
+            
+            <div class="markdown-body">
+              
+              <p>本文转载自CSS大佬杜瑶的<a target="_blank" rel="noopener" href="http://blog.doyoe.com/">CSS探索之旅</a></p>
+<h2 id="也许我们是一样的"><a href="#也许我们是一样的" class="headerlink" title="也许我们是一样的"></a>也许我们是一样的</h2><p>可能大家都用会 <code>margin</code> 或者相对偏移的 <code>top, right, bottom, left</code> 来做一些类似元素偏移的事，其实我也会。这回我们只聊 <code>relative</code> 下的 <code>top, right, bottom, left</code> 。</p>
+<p>比如说我们想让一个 div 向下偏移 50 个像素，通常会这样：</p>
+<h3 id="Case-1"><a href="#Case-1" class="headerlink" title="Case 1:"></a>Case 1:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-class">.margin-top</span>&#123;<br>	<span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Case-2"><a href="#Case-2" class="headerlink" title="Case 2:"></a>Case 2:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-class">.relative-top</span>&#123;<br>	<span class="hljs-attribute">position</span>:relative;<br>	<span class="hljs-attribute">top</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML:"></a>HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-top&quot;</span>&gt;</span>我是margin-top:50px<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;relative-top&quot;</span>&gt;</span>我是relative top:50px<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>上述2种方式，我们都可以完成 div 向下偏移 50 个像素的需求。来看看 <code>DEMO1</code>: <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/margin-top-vs-relative-top.htm">margin-top vs. relative top</a></p>
+<span id="more"></span>
+
+<h2 id="其实它们真的有相似的地方"><a href="#其实它们真的有相似的地方" class="headerlink" title="其实它们真的有相似的地方"></a>其实它们真的有相似的地方</h2><p>从上面的例子，可以发现不论是 <code>margin-top</code> 还是 <code>relative top</code> 都是以自身作为参照物进行偏移的。</p>
+<p>顺带说一下 <code>absolute</code> 偏移相对的是包含块，并且其偏移值是从包含块的 <code>padding</code> 区域开始计算。</p>
+<h2 id="但它们真的不一样，我们来看看规范怎么说："><a href="#但它们真的不一样，我们来看看规范怎么说：" class="headerlink" title="但它们真的不一样，我们来看看规范怎么说："></a>但它们真的不一样，我们来看看规范怎么说：</h2><h3 id="margin"><a href="#margin" class="headerlink" title="margin:"></a>margin:</h3><blockquote>
+<p>原文：Margins in CSS serve to add both horizontal and vertical space between boxes.</p>
+</blockquote>
+<blockquote>
+<p>翻译：CSS中的margin用来添加盒子之间的水平和垂直间隙。</p>
+</blockquote>
+<h3 id="top-right-bottom-left"><a href="#top-right-bottom-left" class="headerlink" title="top, right, bottom, left:"></a>top, right, bottom, left:</h3><blockquote>
+<p>原文：An element is said to be positioned if its ‘position’ property has a value other than ‘static’. Positioned elements generate positioned boxes, and may be laid out according to the following four physical properties: top, right, bottom, left.</p>
+</blockquote>
+<blockquote>
+<p>翻译：一个元素的position属性值如果不为static则发生定位。定位元素会产生定位盒，并且会根据 top, right, bottom, left 这4个物理属性进行排版布局。</p>
+</blockquote>
+<p>意思很明白，<code>margin</code> 是用来增加自身与它人之间的空白，而 <code>top, right, bottom, left</code> 是用来对自身进行排版，作用完全不同。</p>
+<p>也就是说 <code>margin</code> 是互动的，因为它要影响它人；而 <code>top, right, bottom, left </code>是孤独的，它只是自己一个人玩，不影响它人。</p>
+<h2 id="回到之前那个例子"><a href="#回到之前那个例子" class="headerlink" title="回到之前那个例子"></a>回到之前那个例子</h2><p>在 <code>DEMO1</code> 中，我们看到2个方法都可以做到向下偏移50px，不过它们的意义不太一样。</p>
+<p>margin的case: 让该div的顶部与其相邻的元素（这里即其包含块）留有50px的空白。</p>
+<p>top的case: 让该div距离其包含块顶部边缘50px，因为是 <code>relative</code> ，所以这里是距离div自己的顶部边缘。</p>
+<h2 id="我们大胆假设一下"><a href="#我们大胆假设一下" class="headerlink" title="我们大胆假设一下"></a>我们大胆假设一下</h2><p>如果我们设置 <code>margin-bottom</code> 和 <code>bottom</code> 的值也为50px，它们的表现将完全不一样，你觉得呢？ 恩，试试：</p>
+<h3 id="Case-1-1"><a href="#Case-1-1" class="headerlink" title="Case 1:"></a>Case 1:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-class">.margin-bottom</span>&#123;<br>	<span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Case-2-1"><a href="#Case-2-1" class="headerlink" title="Case 2:"></a>Case 2:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-class">.relative-bottom</span>&#123;<br>	<span class="hljs-attribute">position</span>: relative;<br>	<span class="hljs-attribute">bottom</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="HTML-1"><a href="#HTML-1" class="headerlink" title="HTML:"></a>HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-bottom&quot;</span>&gt;</span>我是margin-bottom:50px<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;relative-bottom&quot;</span>&gt;</span>我是relative bottom:50px<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>验证猜想的时刻到了，来看看 <code>DEMO2</code>: <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/margin-bottom-vs-relative-bottom.htm">对margin-bottom和bottom的表现猜想</a></p>
+<p>结果有出乎你的意料吗？好吧，不论怎么，解释下为什么会这样？</p>
+<p>前面我们说过 <code>margin</code> 是用来增加自身与它人之间的间隙，所以它距包含块底部有50px，这应该能理解？那为什么 <code>bottom</code>会跑到上面去？相信仔细看了之前的描述，你应该知道。因为它要相对自己的底部边缘有50px，恩，不是-50px，所以它等于是向上偏移了50px，很简单，不是吗？</p>
+<p>还有一个细节你注意到了吗？<code>bottom</code> 没有撑开它的包含块，仔细看看它的包含块的背景色区域。这正好也验证了之前说的 <code>top, right, bottom, left</code> 是孤独的，它只是自己一个人玩，不影响它人。</p>
+<h2 id="孤独患者"><a href="#孤独患者" class="headerlink" title="孤独患者"></a>孤独患者</h2><p>我们将 <code>DEMO1</code> 稍改改，为其加上一点上下文，再看看结果：</p>
+<h3 id="Case-1-2"><a href="#Case-1-2" class="headerlink" title="Case 1:"></a>Case 1:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-class">.margin-top</span> <span class="hljs-selector-tag">p</span>&#123;<br>	<span class="hljs-attribute">margin-top</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Case-2-2"><a href="#Case-2-2" class="headerlink" title="Case 2:"></a>Case 2:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#demo</span> <span class="hljs-selector-class">.relative-top</span> <span class="hljs-selector-tag">p</span>&#123;<br>	<span class="hljs-attribute">position</span>:relative;<br>	<span class="hljs-attribute">top</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="HTML-2"><a href="#HTML-2" class="headerlink" title="HTML:"></a>HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs HTML"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;margin-top&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是margin-top:50px<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		我是一段随便什么上下文<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;relative-top&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是relative top:50px<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		我是一段随便什么上下文<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>迫不及待的要看看实际例子了，不是么？<code>DEMO3</code>: <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/margin-top-vs-relative-top-2.htm">再次验证一下top, right, bottom, left是孤独患者</a></p>
+<p>至此可以再次说明 <code>top, right, bottom, left</code> 真的和其上下文一毛钱关系都没有，绝对的孤单患者。</p>
+<p>所以 <code>margin</code> 和 <code>top, right, bottom, left </code> 分别要在什么场景使用，应该可以有考量的依据了，不是么？enjoy it.</p>
+<h2 id="似乎还漏了点啥"><a href="#似乎还漏了点啥" class="headerlink" title="似乎还漏了点啥"></a>似乎还漏了点啥</h2><p>差点就这么结篇了，想起还有点遗漏的地方。</p>
+<p>当position为relative时，如果top和bottom都是auto，则它们的计算值是0，right和left亦然；如果top和bottom其中一个为auto，则auto相当于另一个的负值，即top &#x3D; -bottom，right和left亦然；如果top和bottom的值都不为auto，则忽略bottom，如果right和left的值都不为auto，则忽略right。</p>
+<p>好吧，不得不再写个例子：<code>DEMO4</code>: <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/top-right-bottom-left.htm">top, right, bottom, left详述</a></p>
+<p>至于margin，就留给大家思考一下也不错 ^_^</p>
+<p>enjoy it again.</p>
+<h2 id="可参考："><a href="#可参考：" class="headerlink" title="可参考："></a>可参考：</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://dev.w3.org/csswg/css-box/#the-margin-properties">http://dev.w3.org/csswg/css-box/#the-margin-properties</a></li>
+<li><a target="_blank" rel="noopener" href="http://dev.w3.org/csswg/css-position/#box-offsets-trbl">http://dev.w3.org/csswg/css-position/#box-offsets-trbl</a></li>
+</ul>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/margin/">#margin</a>
+      
+        <a href="/blog/tags/w3c/">#w3c</a>
+      
+        <a href="/blog/tags/margin%E5%81%8F%E7%A7%BB/">#margin偏移</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/" title="margin系列之外边距折叠">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">margin系列之外边距折叠</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2013/11/30/css/margin-xi-lie-zhi-bai-fen-bi/" title="margin系列之百分比">
+                        <span class="hidden-mobile">margin系列之百分比</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://unpkg.com/valine/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","appKey":"cnLIT5cgnYGF57t9f3ABOinu","path":"window.location.pathname","placeholder":"请在这里输入您的评论...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://xg2kpiwv.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      Ⓒ 2022 <a href="http://iwfs.org.cn" target="_blank" rel="nofollow noopener"><span>Winfy</span></a>&nbsp;| Ⓟ<a href="https://hexo.io" target="_blank" rel="nofollow noopener"> Hexo</a> &amp; <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+  <script defer src="/blog/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

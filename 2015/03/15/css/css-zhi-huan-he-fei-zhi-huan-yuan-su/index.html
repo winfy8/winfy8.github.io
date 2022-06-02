@@ -1,0 +1,772 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/BlogIcon.png">
+  <link rel="icon" href="/blog/img/BlogIcon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="杜瑶">
+  <meta name="keywords" content="云飞,Winfy,生活,移动,前端,开发">
+  
+    <meta name="description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 先进一个题外话在面试一个 重构（各大公司的叫法可能不太一样）时，我喜欢从一个点开始问，然后一直延展下去成为一条线，甚至是一个面，直到问到不会的地方，然后又换另外一个点。  例如：我可能会说，能简单聊聊 行内级元素 和 块级元素 的区别吗。  一般这时，候选人都会说到 行内级元素 不会换新行，而 块级元素 会格式化为块状，即换行。但也有些遗憾的方面（如：混淆">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS：置换和非置换元素">
+<meta property="og:url" content="https://winfy8.gitee.io/blog/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/index.html">
+<meta property="og:site_name" content="云飞阁">
+<meta property="og:description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 先进一个题外话在面试一个 重构（各大公司的叫法可能不太一样）时，我喜欢从一个点开始问，然后一直延展下去成为一条线，甚至是一个面，直到问到不会的地方，然后又换另外一个点。  例如：我可能会说，能简单聊聊 行内级元素 和 块级元素 的区别吗。  一般这时，候选人都会说到 行内级元素 不会换新行，而 块级元素 会格式化为块状，即换行。但也有些遗憾的方面（如：混淆">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-03-15T05:16:00.000Z">
+<meta property="article:modified_time" content="2022-05-27T10:09:26.669Z">
+<meta property="article:author" content="Winfy">
+<meta property="article:tag" content="w3c">
+<meta property="article:tag" content="视觉格式化模型">
+<meta property="article:tag" content="置换元素">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>CSS：置换和非置换元素 - 云飞阁</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/myfonts.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"winfy8.gitee.io","root":"/blog/","version":"1.9.0","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","app_key":"cnLIT5cgnYGF57t9f3ABOinu","server_url":"https://xg2kpiwv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/blog/atom.xml" title="云飞阁" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>云飞阁</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                按时归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                文章分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                全站标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友情链接
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        
+          <br />
+        
+        <div class="h2">
+          
+            <span id="subtitle">CSS：置换和非置换元素</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        杜瑶
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2015-03-15 13:16" pubdate>
+          2015年3月15日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">CSS：置换和非置换元素</h1>
+            
+            <div class="markdown-body">
+              
+              <p>本文转载自CSS大佬杜瑶的<a target="_blank" rel="noopener" href="http://blog.doyoe.com/">CSS探索之旅</a></p>
+<h2 id="先进一个题外话"><a href="#先进一个题外话" class="headerlink" title="先进一个题外话"></a>先进一个题外话</h2><p>在面试一个 <code>重构</code>（各大公司的叫法可能不太一样）时，我喜欢从一个点开始问，然后一直延展下去成为一条线，甚至是一个面，直到问到不会的地方，然后又换另外一个点。</p>
+<blockquote>
+<p>例如：我可能会说，能简单聊聊 <code>行内级元素</code> 和 <code>块级元素</code> 的区别吗。</p>
+</blockquote>
+<p>一般这时，候选人都会说到 <code>行内级元素</code> 不会换新行，而 <code>块级元素</code> 会格式化为块状，即换行。但也有些遗憾的方面（如：<a href="/2015/03/09/css/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%90%84%E7%A7%8D%E6%A1%86/#block-level-element">混淆了块元素和块级元素，行内元素和行内级元素</a>），当然这看起来似乎不是特别重要。</p>
+<blockquote>
+<p>这时我会继续问，<code>行内元素</code> 能够定义宽度和高度吗？</p>
+</blockquote>
+<p>不少候选人会说：<strong>不能</strong></p>
+<blockquote>
+<p>我会继续问，说几个你熟悉的 <code>行内元素</code> 吧</p>
+</blockquote>
+<p>于是 <code>span</code>, <code>strong</code>, <code>em</code>, <code>ins</code>… 答案我还是比较满意的。</p>
+<blockquote>
+<p>我仍然会继续，<code>img</code> 是行内元素么？</p>
+</blockquote>
+<p>候选人这时通常会迟疑一下，可能意识到我接下来想问啥了，但还是会回答：<strong>是</strong></p>
+<span id="more"></span>
+
+<blockquote>
+<p>于是我会说，那 <code>img</code> 能定义宽度和高度么？</p>
+</blockquote>
+<p>有的候选人这时会犹豫，因为如果回答是，就会推翻他之前说的 <code>行内元素不能定义宽高</code>，如果回答不是，似乎又和他所熟知的经验不一致。但通常最后还是会回答：<strong>能</strong></p>
+<blockquote>
+<p>那我就又得问，你之前不是说 <code>行内元素不能定义宽高</code> 吗？为什么 <code>img</code> 可以？</p>
+</blockquote>
+<p>到这里，候选人基本上不知道要怎么回答好了，最后可能会告诉我，<strong>因为 <code>img</code> 是特殊元素</strong></p>
+<p>当然，虽然这么回答也不能说是错误的，但基本上也能知道候选人对这条线的基础的掌握程度了。</p>
+<p>但我希望听到的答案是通过解释置换元素相关的概念从而给出答案。</p>
+<h2 id="什么是置换元素？"><a href="#什么是置换元素？" class="headerlink" title="什么是置换元素？"></a>什么是置换元素？</h2><p>一个 <code>内容</code> 不受CSS视觉格式化模型控制，CSS渲染模型并不考虑对此内容的渲染，且元素本身一般拥有固有尺寸（宽度，高度，宽高比）的元素，被称之为置换元素。</p>
+<h2 id="什么是非置换元素？"><a href="#什么是非置换元素？" class="headerlink" title="什么是非置换元素？"></a>什么是非置换元素？</h2><p>w3c并没有给出明确的非置换元素的解释，但能确定的是除置换元素之外，所有的元素都是非置换元素。</p>
+<h2 id="行内级置换和非置换元素的宽度定义"><a href="#行内级置换和非置换元素的宽度定义" class="headerlink" title="行内级置换和非置换元素的宽度定义"></a>行内级置换和非置换元素的宽度定义</h2><p>对于行内级非置换元素，宽度设置是不适用的。</p>
+<p>对于行内级置换元素来说，其宽度的设置需遵循以下几点：</p>
+<ul>
+<li>若宽高的计算值都为 <code>auto</code> 且元素有固有宽度，则 <code>width</code> 的使用值为该固有宽度；<blockquote>
+<p>典型的例子是：拥有默认宽高的 <code>input</code> 当宽度的计算值为auto时，则宽度使用值为其默认的固有宽度</p>
+</blockquote>
+</li>
+<li>若宽度的计算值为 <code>auto</code> 且元素有固有宽度，则 <code>width</code> 的使用值为该固有宽度；<blockquote>
+<p>例子同上</p>
+</blockquote>
+</li>
+<li>若宽度的计算值为 <code>auto</code> 且高度有 <code>非auto</code> 的计算值，并且元素有固有宽高比，则 <code>width</code> 的使用值为 <code>高度使用值 * 固有宽高比</code>；<blockquote>
+<p>典型的例子：<code>img</code> 当只定义了其高度值时，其宽度将会根据固有宽高比进行等比设置</p>
+</blockquote>
+</li>
+<li>除此之外，当 <code>width</code> 的计算值为 <code>auto</code> 时，则宽度的使用值为 <code>300px</code><blockquote>
+<p>典型的例子：比如iframe, canvas</p>
+</blockquote>
+</li>
+</ul>
+<p>其它类型的置换元素，其宽度的定义都参照行内置换元素的定义。</p>
+<h2 id="行内级置换和非置换元素的高度定义"><a href="#行内级置换和非置换元素的高度定义" class="headerlink" title="行内级置换和非置换元素的高度定义"></a>行内级置换和非置换元素的高度定义</h2><p>对于行内级非置换元素，高度设置是不适用的。</p>
+<p>对于行内级置换元素来说，其高度的设置需遵循以下几点：</p>
+<ul>
+<li>若宽高的计算值都为 <code>auto</code> 且元素有固有高度，则 <code>height</code> 的使用值为该固有高度；</li>
+<li>若高度的计算值为 <code>auto</code> 且元素有固有高度，则 <code>height</code> 的使用值为该固有高度；</li>
+<li>若高度的计算值为 <code>auto</code> 且宽度有 <code>非auto</code> 的计算值，并且元素有固有宽高比，则 <code>height</code> 的使用值为：<code>宽度使用值 / 固有宽高比</code>；</li>
+<li>若高度的计算值为 <code>auto</code> 且上述条件完全不符，则 <code>height</code> 的使用值 <code>不能大于150px</code>，且宽度不能大于长方形高度的2倍。</li>
+</ul>
+<p>其它类型的置换元素，其高度的定义都参照行内置换元素的定义。</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/w3c/">#w3c</a>
+      
+        <a href="/blog/tags/%E8%A7%86%E8%A7%89%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A8%A1%E5%9E%8B/">#视觉格式化模型</a>
+      
+        <a href="/blog/tags/%E7%BD%AE%E6%8D%A2%E5%85%83%E7%B4%A0/">#置换元素</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/" title="个人博客上线了">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">个人博客上线了</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/" title="margin系列之外边距折叠">
+                        <span class="hidden-mobile">margin系列之外边距折叠</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://unpkg.com/valine/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","appKey":"cnLIT5cgnYGF57t9f3ABOinu","path":"window.location.pathname","placeholder":"请在这里输入您的评论...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://xg2kpiwv.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      Ⓒ 2022 <a href="http://iwfs.org.cn" target="_blank" rel="nofollow noopener"><span>Winfy</span></a>&nbsp;| Ⓟ<a href="https://hexo.io" target="_blank" rel="nofollow noopener"> Hexo</a> &amp; <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+  <script defer src="/blog/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

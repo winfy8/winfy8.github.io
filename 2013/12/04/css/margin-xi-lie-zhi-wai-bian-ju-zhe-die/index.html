@@ -1,0 +1,776 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/blog/img/BlogIcon.png">
+  <link rel="icon" href="/blog/img/BlogIcon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="杜瑶">
+  <meta name="keywords" content="云飞,Winfy,生活,移动,前端,开发">
+  
+    <meta name="description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 不怀疑你也在工作中遇见过几乎可以不用怀疑，前端工作中的你一定遇见过 margin 折叠。 不确定？别着急，你可能写过这样的代码： CSS:123p&amp;#123;	margin: 50px;&amp;#125;  HTML:1234&lt;div id&#x3D;&quot;demo&quot;&gt;	&lt;p&gt;我是一个华丽的段落，别看我文字少&lt;&#x2F;p&gt;	&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="margin系列之外边距折叠">
+<meta property="og:url" content="https://winfy8.gitee.io/blog/2013/12/04/css/margin-xi-lie-zhi-wai-bian-ju-zhe-die/index.html">
+<meta property="og:site_name" content="云飞阁">
+<meta property="og:description" content="本文转载自CSS大佬杜瑶的CSS探索之旅 不怀疑你也在工作中遇见过几乎可以不用怀疑，前端工作中的你一定遇见过 margin 折叠。 不确定？别着急，你可能写过这样的代码： CSS:123p&amp;#123;	margin: 50px;&amp;#125;  HTML:1234&lt;div id&#x3D;&quot;demo&quot;&gt;	&lt;p&gt;我是一个华丽的段落，别看我文字少&lt;&#x2F;p&gt;	&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-12-04T03:15:00.000Z">
+<meta property="article:modified_time" content="2022-05-27T03:42:59.153Z">
+<meta property="article:author" content="Winfy">
+<meta property="article:tag" content="margin">
+<meta property="article:tag" content="w3c">
+<meta property="article:tag" content="margin折叠">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>margin系列之外边距折叠 - 云飞阁</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/blog/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/blog/css/myfonts.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"winfy8.gitee.io","root":"/blog/","version":"1.9.0","typing":{"enable":true,"typeSpeed":100,"cursorChar":"","loop":false,"scope":["home"]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","app_key":"cnLIT5cgnYGF57t9f3ABOinu","server_url":"https://xg2kpiwv.lc-cn-n1-shared.com","path":"window.location.pathname","ignore_local":false}},"search_path":"/blog/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/blog/atom.xml" title="云飞阁" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 40vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/blog/">
+      <strong>云飞阁</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                按时归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                文章分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                全站标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友情链接
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/blog/img/default.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        
+          <br />
+        
+        <div class="h2">
+          
+            <span id="subtitle">margin系列之外边距折叠</span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        杜瑶
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2013-12-04 11:15" pubdate>
+          2013年12月4日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">margin系列之外边距折叠</h1>
+            
+            <div class="markdown-body">
+              
+              <p>本文转载自CSS大佬杜瑶的<a target="_blank" rel="noopener" href="http://blog.doyoe.com/">CSS探索之旅</a></p>
+<h2 id="不怀疑你也在工作中遇见过"><a href="#不怀疑你也在工作中遇见过" class="headerlink" title="不怀疑你也在工作中遇见过"></a>不怀疑你也在工作中遇见过</h2><p>几乎可以不用怀疑，前端工作中的你一定遇见过 <code>margin</code> 折叠。</p>
+<p>不确定？别着急，你可能写过这样的代码：</p>
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS:"></a>CSS:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span>&#123;<br>	<span class="hljs-attribute">margin</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML:"></a>HTML:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是一个华丽的段落，别看我文字少<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>我是另一个华丽的段落<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>大家觉得这 <code>2p</code> 之间会发生点什么？是会合体呢？还是分开？来看看 <code>DEMO1</code> <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/collapse-margin.htm">margin折叠</a></p>
+<span id="more"></span>
+
+<p>好吧，它们真的合体了。按照常规思路，这 <code>2p</code> 之间的空白应该是第一个 <code>p</code> 的 <code>margin-bottom</code> 50px 加上第二 <code>p</code> 的 <code>margin-top</code> 50px，即 <code>50 + 50px = 100px</code> ，但结果总是出乎意料不是么？它们之间只剩下了 <code>50px</code>，这就是 <code>margin折叠</code>。所以任何人遇见过我都不会觉得意外，因为这样的Code看起来没有任何问题。</p>
+<h2 id="它们之间到底发生了些什么？"><a href="#它们之间到底发生了些什么？" class="headerlink" title="它们之间到底发生了些什么？"></a>它们之间到底发生了些什么？</h2><p>这 <code>2p</code> 内部到底发生了什么，才会有这样的表现？</p>
+<p>早在CSS1中就有对 <code>margin</code> 折叠的说明，我们来看看：</p>
+<blockquote>
+<p>原文：The width of the margin on non-floating block-level elements specifies the minimum distance to the edges of surrounding boxes. Two or more adjoining vertical margins (i.e., with no border, padding or content between them) are collapsed to use the maximum of the margin values. In most cases, after collapsing the vertical margins the result is visually more pleasing and closer to what the designer expects.</p>
+</blockquote>
+<blockquote>
+<p>翻译：外边距用来指定非浮动元素与其周围盒子边缘的最小距离。两个或两个以上的相邻的垂直外边距会被折叠并使用它们之间最大的那个外边距值。多数情况下，折叠垂直外边距可以在视觉上显得更美观，也更贴近设计师的预期。</p>
+</blockquote>
+<p>从这段话中，我们能获得一些有用的信息：</p>
+<ul>
+<li>发生折叠需要是相邻的非浮动元素；</li>
+<li>折叠发生在垂直外边距上，即margin-top&#x2F;margin-bottom；</li>
+<li>折叠后取其中最大的那个margin值作为最终值；</li>
+</ul>
+<p>所以 <code>DEMO1</code> 中的 <code>2p</code> 符合折叠的条件，相邻且都不是浮动元素，于是它们就自然合体了。至于取最大的那个值作为折叠后的最终值，因为都是50px，所以无所谓谁谁谁了。</p>
+<h2 id="为什么会有margin折叠这样的设计？"><a href="#为什么会有margin折叠这样的设计？" class="headerlink" title="为什么会有margin折叠这样的设计？"></a>为什么会有margin折叠这样的设计？</h2><p>从上文中，应该能知道个大概？在前面的文章中，我们说过，CSS的基本模型是排版。只是前端工程师现在做得更多的是 <code>布局</code> 而非 <code>文字排版</code>，但CSS并未界定这两者的区别。而 <code>margin</code> 折叠是为实现文本排版的段落间距而提供的特性。所以很多时候 <code>margin</code> 折叠的特性会带给我们诸多疑惑。</p>
+<p>再回到 <code>DEMO1</code> 仔细看看，你会惊讶的发现，其实你只要设置每个 <code>p</code> 有相同的垂直外边距，由于发生会 <code>margin</code> 折叠，所有的 <code>p</code> 之间，及包含块与 <code>p</code> 之间的间隙都是相同的，非常美妙且实现简单，不是么？这正印证了我们引用 <code>CSS1</code> 中的那短话：多数情况下，折叠垂直外边距可以在视觉上显得更美观，也更贴近设计师的预期。</p>
+<h2 id="浮动元素真的不会发生margin折叠吗？"><a href="#浮动元素真的不会发生margin折叠吗？" class="headerlink" title="浮动元素真的不会发生margin折叠吗？"></a>浮动元素真的不会发生margin折叠吗？</h2><p>质疑精神一直都是进步最重要的驱动力之一，我们为什么不能呢？改下代码看看：</p>
+<h3 id="CSS-1"><a href="#CSS-1" class="headerlink" title="CSS:"></a>CSS:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">p</span>&#123;<br>	<span class="hljs-attribute">float</span>: left;<br>	<span class="hljs-attribute">margin</span>: <span class="hljs-number">50px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>只改CSS代码，HTML不变。迫不及待的想看到验证情况，来吧，还等什么。<code>DEMO2</code> <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/float-collapse-margin.htm">验证浮动元素是否会发生margin折叠</a>。</p>
+<p>结果告诉我们，真的没有折叠，<code>2p</code> 间的间隙足足有 <code>100px</code>。</p>
+<p>剩下的2点大家就自行验证吧，相信你能得到满意的额测试结果。</p>
+<h2 id="仅此而已？"><a href="#仅此而已？" class="headerlink" title="仅此而已？"></a>仅此而已？</h2><p>回想一下我们在 <a target="_blank" rel="noopener" href="http://blog.doyoe.com/2013/11/30/css/margin%E7%B3%BB%E5%88%97%E4%B9%8B%E7%99%BE%E5%88%86%E6%AF%94/">margin系列之百分比</a> 文中提到过受书写模式影响的一些特性，非常不幸，<code>margin</code> 折叠正好是其中之一。</p>
+<p>是的，在CSS2及后续的规范中，将<code>margin</code> 折叠描述得更为详尽了。</p>
+<p>在水平书写模式下，发生 <code>margin</code> 折叠的是垂直方向，即 <code>margin-top/margin-bottom</code>，在垂直书写模式下，<code>margin</code> 折叠发生在水平方向上，即 <code>margin-right/margin-left</code>。</p>
+<h2 id="现在我们来解释一下到底什么是margin折叠？"><a href="#现在我们来解释一下到底什么是margin折叠？" class="headerlink" title="现在我们来解释一下到底什么是margin折叠？"></a>现在我们来解释一下到底什么是margin折叠？</h2><p>在CSS中，两个或以上的块元素（可能是兄弟，也可能不是）之间的相邻外边距可以被合并成一个单独的外边距。通过此方式合并的外边距被称为折叠，且产生的已合并的外边距被称为折叠外边距。</p>
+<p>处于同一个块级上下文中的块元素，没有行框、没有间隙、没有内边距和边框隔开它们，这样的元素垂直边缘毗邻，则称之为相邻。</p>
+<h3 id="什么是垂直边缘毗邻？"><a href="#什么是垂直边缘毗邻？" class="headerlink" title="什么是垂直边缘毗邻？"></a>什么是垂直边缘毗邻？</h3><ul>
+<li>元素的上外边距和其属于常规流中的第一个孩子的上外边距。</li>
+<li>元素的下外边距和其属于常规流中的下一个兄弟的上外边距。</li>
+<li>属于常规流中的最后一个孩子的下外边距和其父亲的下外边距，如果其父亲的高度计算值为 <code>auto</code>。</li>
+<li>元素的上、下外边距，如果该元素没有建立新的块级格式上下文，且 <code>min-height</code> 的计算值为零、<code>height</code> 的计算值为零或 <code>auto</code>、且没有属于常规流中的孩子。</li>
+</ul>
+<p>说得很清楚了，我想是的。你可能需要注意的是发生 <code>margin</code> 折叠的元素不一定是兄弟关系，也能是父子或祖先的关系。</p>
+<h2 id="如何避免margin折叠？"><a href="#如何避免margin折叠？" class="headerlink" title="如何避免margin折叠？"></a>如何避免margin折叠？</h2><p>我想肯定有人要问，那我不想有 <code>margin</code> 折叠的情况发生，该怎么办？其实从上面的规则中，我们已经可以抽出避免 <code>margin</code> 折叠的条件来。</p>
+<ul>
+<li><code>margin</code> 折叠元素只发生在块元素上；</li>
+<li>浮动元素不与其他元素 <code>margin</code> 折叠；</li>
+<li>定义了属性overflow且值不为visible（即创建了新的块级格式化上下文）的块元素，不与它的子元素发生<code>margin</code> 折叠；</li>
+<li>绝对定位元素的 <code>margin</code> 不与任何 <code>margin</code> 发生折叠。</li>
+<li>特殊：根元素的 <code>margin</code> 不与其它任何 <code>margin</code> 发生折叠；</li>
+<li>如果常规流中的一个块元素没有 <code>border-top</code>、<code>padding-top</code>，且其第一个浮动的块级子元素没有间隙，则该元素的上外边距会与其常规流中的第一个块级子元素的上外边距折叠。<br>可能有些绕，我们验证一下 <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/collapse-margin-verify.htm"><code>DEMO3</code></a>，在其第一个浮动子元素加个全角空格做间隙，来个反证 <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/collapse-margin-re-verify.htm"><code>DEMO4</code></a></li>
+<li>如果一个元素的 <code>min-height</code> 属性为0，且没有上或下边框以及上或下内边距，且 <code>height</code> 为0或者 <code>auto</code>，且不包含行框，且其属于常规流的所有孩子的外边距都折叠了，则折叠其外边距。验证一下 <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/collapse-margin-verify-2.htm"><code>DEMO5</code></a></li>
+</ul>
+<h2 id="这样干掉margin折叠"><a href="#这样干掉margin折叠" class="headerlink" title="这样干掉margin折叠"></a>这样干掉margin折叠</h2><p>如果不想发生 <code>margin</code> 折叠，那么你可以根据上面的规则得到方法，不是么？我把它改成非块元素，让它浮动，让它绝对定位，让它 <code>overflow:hidden</code> <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/destroy-collapse-margin-by-overflow.htm"><code>DEMO6</code></a>，用边框隔开它们 <a target="_blank" rel="noopener" href="http://demo.doyoe.com/css/margin/destroy-collapse-margin-by-border.htm"><code>DEMO7</code></a>…随你怎样，信手拈来。</p>
+<p>今天状态不太好，有些地方写得欠妥，之后可能会修改一下。</p>
+<p>BTW: 这篇文章里可能有不少之前文章中没出现过的名词，比如：块级上下文、行框、常规流，如果你对此不甚了解，可以先找资料看看，我以后会讲到。</p>
+<p>enjoy it.</p>
+<h2 id="可参考："><a href="#可参考：" class="headerlink" title="可参考："></a>可参考：</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://www.w3.org/TR/css3-box/#margins">http://www.w3.org/TR/css3-box/#margins</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.w3.org/TR/css3-box/#collapsing-margins">http://www.w3.org/TR/css3-box/#collapsing-margins</a></li>
+<li><a target="_blank" rel="noopener" href="http://dev.w3.org/csswg/css-box/#collapsing-margins">http://dev.w3.org/csswg/css-box/#collapsing-margins</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.w3.org/TR/CSS1/#vertical-formatting">http://www.w3.org/TR/CSS1/#vertical-formatting</a></li>
+</ul>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/blog/categories/CSS/" class="category-chain-item">CSS</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/blog/tags/margin/">#margin</a>
+      
+        <a href="/blog/tags/w3c/">#w3c</a>
+      
+        <a href="/blog/tags/margin%E6%8A%98%E5%8F%A0/">#margin折叠</a>
+      
+    </div>
+  
+</div>
+
+
+              
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/blog/2015/03/15/css/css-zhi-huan-he-fei-zhi-huan-yuan-su/" title="CSS：置换和非置换元素">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CSS：置换和非置换元素</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/blog/2013/12/02/css/margin-xi-lie-zhi-yu-xiang-dui-pian-yi-de-yi-tong/" title="margin系列之与相对偏移的异同">
+                        <span class="hidden-mobile">margin系列之与相对偏移的异同</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://unpkg.com/valine/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"XG2kPiwVVpq4bNnULj0mQl7p-gzGzoHsz","appKey":"cnLIT5cgnYGF57t9f3ABOinu","path":"window.location.pathname","placeholder":"请在这里输入您的评论...","avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://xg2kpiwv.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+      Ⓒ 2022 <a href="http://iwfs.org.cn" target="_blank" rel="nofollow noopener"><span>Winfy</span></a>&nbsp;| Ⓟ<a href="https://hexo.io" target="_blank" rel="nofollow noopener"> Hexo</a> &amp; <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a>
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+  
+    <script  src="/blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/blog/js/local-search.js" ></script>
+
+  <script defer src="/blog/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
