@@ -4,11 +4,40 @@
   
   
   <entry>
+    <title>Hexo + Github 零成本搭建个人博客</title>
+    <link href="/2022/06/02/front-end/hexo-github-ling-cheng-ben-da-jian-ge-ren-bo-ke/"/>
+    <url>/2022/06/02/front-end/hexo-github-ling-cheng-ben-da-jian-ge-ren-bo-ke/</url>
+    
+    <content type="html"><![CDATA[<p>Hexo 是一个静态博客框架，其依赖于 Node.js，支持 Markdown 格式撰写文章，通过渲染引擎，在本地生成静态网页。然后我们可以通过 Github 提供的网站托管服务 Github pages ，公开发布网页。以这种组合方式搭建的博客网站特点是：</p><ul><li>原始文章在本地创建生成，相当于自动在本地备份，且可随时借助 Markdown 编辑工具在本地预览查看。</li><li>生成静态网页格式，对网站服务器要求低，节约了服务器的购买成本和降低了服务器的配置要求，甚至可以直接部署于 Github、Gitee 等免费提供的网站托管服务上。</li></ul><h3 id=""><a href="#" class="headerlink" title=""></a></h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端技术</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Github</tag>
+      
+      <tag>博客</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>个人博客上线了</title>
     <link href="/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/"/>
     <url>/2022/05/26/life/ge-ren-bo-ke-shang-xian-liao/</url>
     
-    <content type="html"><![CDATA[<h3 id="博客主体完成"><a href="#博客主体完成" class="headerlink" title="博客主体完成"></a>博客主体完成</h3><p>经过一个多星期的折腾，个人博客终于建成基本框架，成功上线了！   </p><blockquote><p>本博客采用 <a href="https://hexo.io/">HEXO</a> 框架，主题为 <a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>，通过 <a href="https://github.com/">GitHub Pages</a> 进行部署，采用响应式布局，可以同时适配手机、平板或电脑屏幕。   </p></blockquote><p>博客站名初定为<strong>云飞阁</strong>，我对这个名字还不是很满意，后面想到更好的再说吧，也欢迎大家提出宝贵意见。<br>挑选站名的时候，以下这些站名曾列入候选：</p><table><thead><tr><th>类别</th><th>站名</th><th>站名</th><th>站名</th></tr></thead><tbody><tr><td>三字</td><td>飞云轩</td><td>飞云阁</td><td>云飞阁</td></tr><tr><td></td><td>云飞处</td><td>云飞扬</td><td>云飞说</td></tr><tr><td>四字</td><td>云飞小栈</td><td>云飞笔记</td><td>闲看云飞</td></tr><tr><td></td><td>云起飞扬</td><td>坐看云飞</td><td>博客云飞</td></tr><tr><td>其它</td><td>云博</td><td>云飞的博客</td><td>云飞Blog</td></tr></tbody></table><h3 id="下一步打算"><a href="#下一步打算" class="headerlink" title="下一步打算"></a>下一步打算</h3><p>框架搭建好了，下一步就是充实内容了，博客的主要板块现在设想开设以下三个：<em><strong>生活随笔，手机开发，前端设计</strong></em>。<br>至于正式的第一篇文章，我已经想好了，就把这个博客网站的搭建过程写下来吧。</p><p>因为现在暂时没有自己的文章，先转载几篇大佬的文章到这里，来自杜瑶的 <a href="http://blog.doyoe.com/">CSS探索之旅</a>，为什么选择转载杜瑶，原因有二：</p><ol><li>我现在正在努力学习前端技术，前端基础三剑客 Html, CSS, JS 里面，最弱的就是 CSS；</li><li>在搭建博客网站的过程中，我是在看到了杜瑶的博客 “CSS探索之旅” 之后，才最终确定采用 HEXO 框架技术。</li></ol><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>好了，写这篇的主要目的，是熟悉 HEXO 的博文发布方式，还有 MarkDown 的写法，一篇博文常用到的标题、正文、链接、引用、列表、表格、加粗、斜体，都已经有了，对了，还有图片功能没有写到，以下是图片测试：<br><img src="/blog/img/weixin.png" alt="微信" title="快速找到我，欢迎添加我的微信">    </p><p>注：HEXO 本质上是以静态网页方式部署的，没有交互功能，本站的留言功能是采用插件方式的第三方留言系统，微信中常加载失败，遇此情况时，请使用手机浏览器或在电脑上浏览本站。</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="博客主体完成"><a href="#博客主体完成" class="headerlink" title="博客主体完成"></a>博客主体完成</h3><p>经过一个多星期的折腾，个人博客终于建成基本框架，成功上线了！   </p><blockquote><p>本博客采用 <a href="https://hexo.io/">HEXO</a> 框架，主题为 <a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>，通过 <a href="https://github.com/">GitHub Pages</a> 进行部署，采用响应式布局，可以同时适配手机、平板或电脑屏幕。   </p></blockquote><p>博客站名初定为<strong>云飞阁</strong>，我对这个名字还不是很满意，后面想到更好的再说吧，也欢迎大家提出宝贵意见。<br>挑选站名的时候，以下这些站名曾列入候选：</p><table><thead><tr><th>类别</th><th>站名</th><th>站名</th><th>站名</th></tr></thead><tbody><tr><td>三字</td><td>飞云轩</td><td>飞云阁</td><td>云飞阁</td></tr><tr><td></td><td>云飞处</td><td>云飞扬</td><td>云飞说</td></tr><tr><td>四字</td><td>云飞小栈</td><td>云飞笔记</td><td>闲看云飞</td></tr><tr><td></td><td>云起飞扬</td><td>坐看云飞</td><td>博客云飞</td></tr><tr><td>其它</td><td>云博</td><td>云飞的博客</td><td>云飞Blog</td></tr></tbody></table><h3 id="下一步打算"><a href="#下一步打算" class="headerlink" title="下一步打算"></a>下一步打算</h3><p>框架搭建好了，下一步就是充实内容了，博客的主要板块现在设想开设以下三个：<em><strong>生活随笔，手机开发，前端设计</strong></em>。<br>至于正式的第一篇文章，我已经想好了，就把这个博客网站的搭建过程写下来吧。</p><p>因为现在暂时没有自己的文章，先转载几篇大佬的文章到这里，来自杜瑶的 <a href="http://blog.doyoe.com/">CSS探索之旅</a>，为什么选择转载杜瑶，原因有二：</p><ol><li>我现在正在努力学习前端技术，前端基础三剑客 Html, CSS, JS 里面，最弱的就是 CSS；</li><li>在搭建博客网站的过程中，我是在看到了杜瑶的博客 “CSS探索之旅” 之后，才最终确定采用 HEXO 框架技术。</li></ol><h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>好了，写这篇的主要目的，是熟悉 HEXO 的博文发布方式，还有 MarkDown 的写法，一篇博文常用到的标题、正文、链接、引用、列表、表格、加粗、斜体，都已经有了，对了，还有图片功能没有写到，以下是图片测试：<br><img src="/img/weixin.png" alt="微信" title="快速找到我，欢迎添加我的微信">    </p><p>注：HEXO 本质上是以静态网页方式部署的，没有交互功能，本站的留言功能是采用插件方式的第三方留言系统，微信中常加载失败，遇此情况时，请使用手机浏览器或在电脑上浏览本站。</p>]]></content>
     
     
     <categories>
@@ -74,9 +103,9 @@
     
     <tags>
       
-      <tag>margin</tag>
-      
       <tag>w3c</tag>
+      
+      <tag>margin</tag>
       
       <tag>margin折叠</tag>
       
@@ -103,9 +132,9 @@
     
     <tags>
       
-      <tag>margin</tag>
-      
       <tag>w3c</tag>
+      
+      <tag>margin</tag>
       
       <tag>margin偏移</tag>
       
@@ -132,9 +161,9 @@
     
     <tags>
       
-      <tag>margin</tag>
-      
       <tag>w3c</tag>
+      
+      <tag>margin</tag>
       
       <tag>margin百分比</tag>
       
@@ -161,9 +190,9 @@
     
     <tags>
       
-      <tag>margin</tag>
-      
       <tag>w3c</tag>
+      
+      <tag>margin</tag>
       
     </tags>
     
